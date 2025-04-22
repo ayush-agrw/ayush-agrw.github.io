@@ -54,7 +54,8 @@
                 const hash = "#" + parts[1]; // Extract hash part (e.g., #about)
 
                 // Same page navigation
-                if (!page || page === window.location.pathname.split("/").pop()) {
+                const currentPage = window.location.pathname.split("/").pop() || "index.html";
+                if (!page || page === currentPage) {
                     event.preventDefault();
                     $('html, body').animate({
                         scrollTop: $(hash).offset().top
