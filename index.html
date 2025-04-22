@@ -12,7 +12,8 @@
     <title>Ayush Agrawal</title>
 <!--CSS FILE FOR STYLING-->
     <link rel="stylesheet" href="css/styles.css">
-<!--GOOGLE FONT SETUP-->
+    <link rel="stylesheet" href="css/navbar_styles_common.css">
+    <!--GOOGLE FONT SETUP-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
@@ -26,6 +27,14 @@
 <!--    <div class="welcome_animation"></div>-->
 <!--</div>-->
 <!--WELCOME ANIMATION BEFORE FADE IN-->
+
+<script>
+    $(function() {
+        $("#navigationplaceholder").load("./nav.html", function() {
+            $("#navigationplaceholder").css("opacity", 1); // Trigger fade-in
+        });
+    });
+</script>
 
 <div id="navigationplaceholder"></div>
 
@@ -139,14 +148,6 @@
 <!--        }, 500); // delay before fading out-->
 <!--    });-->
 <!--</script>-->
-
-<script>
-    $(function() {
-        $("#navigationplaceholder").load("./nav.html", function() {
-            $("#navigationplaceholder").css("opacity", 1); // Trigger fade-in
-        });
-    });
-</script>
 
 </body>
 
