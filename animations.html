@@ -1,0 +1,168 @@
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149477840-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-149477840-1');
+    </script>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/script.js"></script>
+<!--    <script>-->
+<!--        $(function(){-->
+<!--            $("#navigationplaceholder").load("nav.html");-->
+<!--        });-->
+<!--    </script>-->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Agrawal | Animations</title>
+    <link rel="stylesheet" href="css/animations_styles.css">
+    <link rel="stylesheet" href="css/navbar_styles_common.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Lato:300|Raleway:300|Roboto:300,400|Work+Sans:300,400" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<script>
+    $(function() {
+        // Load the navbar
+        $("#navigationplaceholder").load("nav.html", function() {
+            $("#navigationplaceholder").css("opacity", 1);
+
+            // Once the navbar is loaded, start loading videos
+            $("video").each(function() {
+                $(this).find("source").each(function() {
+                    const dataSrc = $(this).attr("data-src");
+                    if (dataSrc) {
+                        $(this).attr("src", dataSrc);
+                    }
+                });
+                this.load(); // Reload the video element
+            });
+        });
+    });
+</script>
+
+
+<div id="navigationplaceholder"></div>
+
+<div id="page">
+    <div class="heading">
+        <h2 class="title">Cyberpunk Scene</h2>
+        <p style="width: 80%">Animation and compositing in Blender.</p>
+        <p>Background made with Krita.</p>
+    </div>
+    <div class="heading1">
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p style="width: 80%">Color Grading:</p>
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/1%20(color%20grading).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p style="width: 80%">Process:</p>
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/1%20(process).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="heading">
+        <h2 class="title">Cherry Blossoms</h2>
+        <p style="width: 80%"></p>
+    </div>
+    <div class="heading1">
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p style="width: 80%">Part Two:</p>
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+
+    <div class="heading">
+        <h2 class="title">Raindrops</h2>
+        <p style="width: 80%"></p>
+    </div>
+    <div class="heading1">
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="heading">
+        <h2 class="title">Camera Animation</h2>
+        <p style="width: 80%"></p>
+    </div>
+    <div class="heading1">
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/10.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="heading">
+        <h2 class="title">Others</h2>
+        <p style="width: 80%"></p>
+    </div>
+    <div class="heading1">
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/7.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/8.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/9.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/9%20usage.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video class="spaced-video" width="70%" height="auto" controls="">
+            <source data-src="videos/11.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="heading1"> </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+
+<!--fade in-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#page').fadeIn(500);
+    });
+</script>
+
+</body>
+
+</html>

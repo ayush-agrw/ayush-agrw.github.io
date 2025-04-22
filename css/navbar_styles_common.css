@@ -1,0 +1,27 @@
+/* Hide the scrollbar for Webkit browsers */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+
+#nav::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+
+#navigationplaceholder {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in effect */
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    font-family: 'Mukta Vaani', sans-serif;
+    color: lightgrey;
+    letter-spacing: 0.1em;
+    padding: 0.5vw 0vw;
+    text-decoration: none;
+    width: 100%;
+
+}
+li a:hover, .dropdown:hover .dropbtn {
+    color: darkgrey;
+}

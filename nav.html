@@ -1,0 +1,77 @@
+<!--NAVBAR (LINKS AND BUTTONS)-->
+<nav>
+    <ul id="nav">
+        <!--HOME LINK TO TOP USING THE ANCHOR + IMAGE-->
+        <a href="index.html#top"><img src="images/home.png" alt="Home Button" id="home"></a>
+
+        <div class="navcontainer">
+            <li><a href="index.html#about">About</a></li>
+            <!--            <li><a href="index#demoreel">Demo Reel</a></li>-->
+            <li><a href="coding.html">Coding Projects</a></li>
+            <li><a href="webdesign.html">Web Design</a></li>
+            <li><a href="animations.html">Animations</a></li>
+            <li><a href="writing.html">Writing</a></li>
+            <!--DROPDOWN MENUS-->
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn" id="dropdownitems">Video Games</a>
+                            <ul>
+                                <li class="dropitems"><a href="videogame1.html">Video Game One</a></li>
+                                <li class="dropitems"><a href="videogame2.html">Video Game Two</a></li>
+                            </ul>
+                        </li>
+<!--            <li class="dropdown">-->
+<!--                <a href="javascript:void(0)" class="dropbtn" id="dropdownitems1">Test2</a>-->
+<!--                <ul>-->
+<!--                    <li class="dropitems1"><a href="shortfilms">Novels</a></li>-->
+<!--                    <li class="dropitems1"><a href="visdev">Short Stories</a></li>-->
+<!--                </ul>-->
+<!--            </li>-->
+            <!--DROPDOWN MENUS-->
+<!--            <li><a href="videogame1.html">Video Games</a></li>-->
+            <li><a href="illustrations.html">Illustrations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+    </ul>
+    <!--SOCIAL MEDIA LINKS ON NAVBAR-->
+    <!--    <div class="links">-->
+    <!--        <a target="_blank" href="https://twitter.com/chenalii"><img src="images/twitter.png" alt="tumblr" class="darkableImage" onmouseout="this.style.opacity=1;this.filters.alpha.opacity=100" onmouseover="this.style.opacity=0.6;this.filters.alpha.opacity=60"></a>-->
+    <!--        <a target="_blank" href="https://www.artstation.com/artist/aliyachen"><img src="images/artstation.png" alt="Artstation" class="darkableImage" onmouseout="this.style.opacity=1;this.filters.alpha.opacity=100" onmouseover="this.style.opacity=0.6;this.filters.alpha.opacity=60"></a>-->
+    <!--        <a target="_blank" href="https://www.instagram.com/chenalii/"><img src="images/instagram.png" alt="Instagram" class="darkableImage" onmouseout="this.style.opacity=1;this.filters.alpha.opacity=100" onmouseover="this.style.opacity=0.6;this.filters.alpha.opacity=60"></a>-->
+    <!--    </div>-->
+    <!--SOCIAL MEDIA LINKS ON NAVBAR-->
+</nav>
+<!--NAVBAR (LINKS AND BUTTONS)-->
+
+<!--SMOOTH SCROLLING FOR ANIMATED ARROWS-->
+<script>
+    $(document).ready(function () {
+        $("a").on('click', function (event) {
+            // Get the href and determine if it's an internal link with a hash
+            const href = $(this).attr("href");
+            if (href.includes("#")) {
+                const parts = href.split("#");
+                const page = parts[0]; // Extract page part (e.g., index.html)
+                const hash = "#" + parts[1]; // Extract hash part (e.g., #about)
+
+                // Same page navigation
+                if (!page || page === window.location.pathname.split("/").pop()) {
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 1000, function () {
+                        window.location.hash = hash;
+                    });
+                } else {
+                    // Different page navigation
+                    event.preventDefault();
+                    $('html, body').fadeOut(100, function () {
+                        window.location.href = href;
+                    });
+                }
+            }
+        });
+    });
+</script>
+<!--SMOOTH SCROLLING FOR ANIMATED ARROWS-->
+
+<script src="js/script.js"></script>
