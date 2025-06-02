@@ -94,6 +94,14 @@ li.dropdown {
         font-weight:200;
    text-transform:none;
 }
+.dropitems1 {
+    display: none;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    font-weight:200;
+    text-transform:none;
+}
 
 
 /*links at bottom*/
