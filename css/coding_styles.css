@@ -2,6 +2,10 @@ html {
     padding: 0px;
 }
 
+.spaced-video {
+    margin-bottom: 60px; /* Adjust spacing as needed */
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -9,11 +13,15 @@ html, body {
     font-size: 16px;
 }
 
+#nav::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+
 h2 {
-  font-weight: 500;
+    font-weight: 500;
 }
 p,h4{
-  font-weight:300;
+    font-weight:300;
 }
 
 p1 {
@@ -33,7 +41,7 @@ p1 {
 }
 .navcontainer {
     margin-top: 3vh;
-      padding-bottom:5rem;
+    padding-bottom:5rem;
 }
 #nav {
     text-align: center;
@@ -91,8 +99,8 @@ li.dropdown {
     text-align: center;
     position: relative;
     width: 100%;
-        font-weight:200;
-   text-transform:none;
+    font-weight:200;
+    text-transform:none;
 }
 .dropitems1 {
     display: none;
@@ -144,7 +152,7 @@ input[type=text], select, textarea {
 }
 
 input[type=submit] {
-     float: left;
+    float: left;
     background-color: #26292d;
     color: white;
     padding: 12px 48%;
@@ -169,8 +177,8 @@ input[type=submit]:hover {
     margin-left: 20.5%;
 }
 .fade {
-        animation:opac 0.5s}@keyframes opac{from{opacity:0} to{opacity:1}
-}
+    animation:opac 0.5s}@keyframes opac{from{opacity:0} to{opacity:1}
+                        }
 
 /*code*/
 /*
@@ -223,4 +231,53 @@ audio {
 } */
 .last {
     margin-bottom: 15vh;
+}
+.comparison-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9; /* fallback for 1920x1080 */
+    margin: 30px auto;
+    overflow: hidden;
+    cursor: ew-resize;
+    background: black;
+}
+
+.comparison-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or object-fit: contain for exact ratios */
+    display: block;
+}
+
+.comparison-container .after-wrapper {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.comparison-container .after-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.comparison-container .slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-2px);
+    width: 7px;
+    height: 100%;
+    background: #fff;
+    z-index: 10;
 }

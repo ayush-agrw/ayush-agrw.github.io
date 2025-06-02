@@ -3,8 +3,6 @@
 <head>
     <link rel="shortcut icon" type="image/png" href="images/logo_cute.jpg">
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149477840-1"></script>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/script.js"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -14,11 +12,11 @@
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/script.js"></script>
-<!--    <script>-->
-<!--        $(function(){-->
-<!--            $("#navigationplaceholder").load("nav.html");-->
-<!--        });-->
-<!--    </script>-->
+    <!--    <script>-->
+    <!--        $(function(){-->
+    <!--            $("#navigationplaceholder").load("nav.html");-->
+    <!--        });-->
+    <!--    </script>-->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,21 +33,54 @@
 
 <div id="navigationplaceholder"></div>
 
-
 <div id="page">
 
-    <h2 class="title">Stylization Tool</h2>
-    <p style="width: 80%">This was definitely the most interesting and uncertain part of the
-        pre-production process of my animated short movie. The goal was to give my scenes a
-        distinct look and feel that stays coherent throughout the movie.
-        The inspiration for this was mostly the
-        heavily stylized and post-processed look of Spider-Man Into the Spiderverse, as well as
-        certain cyberpunk scenes.
-    </p>
-    <img class="spaced-video" src="images/preproduction/example%20before.png" alt="modeling" width="90%" height="auto">
-    <img class="spaced-video" src="images/preproduction/output2.png" alt="modeling" width="90%" height="auto">
-    <img class="spaced-video" src="images/preproduction/5.png" alt="modeling" width="90%" height="auto">
-    <img class="spaced-video" src="images/preproduction/7.png" alt="modeling" width="90%" height="auto">
+    <div class="heading">
+        <h2 class="title">Image Stylization Tool</h2>
+        <p style="width: 80%">This was definitely the most interesting and uncertain part of the
+            pre-production process. The goal was to give my animated scenes a distinct look and feel
+            that stays coherent throughout the movie. The inspiration for this was mostly the
+            heavily stylized and post-processed look of Spider-Man Into the Spiderverse, as well as
+            certain cyberpunk scenes. Thus, this tool applies certain effects (e.g., halftone
+            textures, chromatic aberration, noise effects, vignettes,
+            automatic graphic reduction for background elements, paint smears, line hatching) for a
+            more sophisticated feel.
+        </p>
+        <p style="width: 80%">This tool can also be used to stylize a sequence of images, just like in
+            proper movie scenes. For this, the look of the first image can be tweaked as needed and
+            the program will automatically use these settings to dynamically apply these effects
+            over all the individual images in succession, identifying changes in the picture and
+            automatically adapting to them.
+        </p>
+        <p style="width: 80%">The sequential processing of thousands of images at a time was extremely
+            time-consuming. Hence, the program is also optimized to support parallel processing, which
+            distributes the images as individual tasks across multiple CPU cores, thus utilizing
+            the full potential of every computer it  is deployed at.
+        </p>
+        <p style="width: 80%">Tip: use the slider to compare the inputs and the outputs for
+            the examples below. The full code for this project is availabe here:
+        </p>
+        <p style="width: 80%">https://github.com/ayush-agrw/SF3_Stylization_Tool.git</p>
+<!--        <img class="spaced-video" src="images/preproduction/example%20before.png" alt="modeling" width="90%" height="auto">-->
+<!--        <img class="spaced-video" src="images/preproduction/output2.png" alt="modeling" width="90%" height="auto">-->
+<!--        <img class="spaced-video" src="images/preproduction/5.png" alt="modeling" width="90%" height="auto">-->
+<!--        <img class="spaced-video" src="images/preproduction/7.png" alt="modeling" width="90%" height="auto">-->
+        <div class="comparison-container" id="compare1">
+            <img src="images/preproduction/example%20before.png" alt="Before">
+            <div class="after-wrapper">
+                <img src="images/preproduction/output2.png" alt="After">
+            </div>
+            <div class="slider-handle"></div>
+        </div>
+
+        <div class="comparison-container" id="compare2">
+            <img src="images/preproduction/5.png" alt="Before">
+            <div class="after-wrapper">
+                <img src="images/preproduction/7.png" alt="After">
+            </div>
+            <div class="slider-handle"></div>
+        </div>
+    </div>
 
 </div>
 
@@ -67,6 +98,41 @@
         $("#navigationplaceholder").load("nav.html", function() {
             $("#navigationplaceholder").css("opacity", 1);
         });
+    });
+</script>
+
+<script>
+    function initComparison(containerId) {
+        const container = document.getElementById(containerId);
+        const beforeImg = container.querySelector('img');
+        const afterWrapper = container.querySelector('.after-wrapper');
+        const slider = container.querySelector('.slider-handle');
+
+        // Set container height based on image aspect ratio
+        beforeImg.onload = () => {
+            const aspect = beforeImg.naturalHeight / beforeImg.naturalWidth;
+            container.style.height = (container.offsetWidth * aspect) + 'px';
+        };
+
+        let isDown = false;
+
+        function move(e) {
+            if (!isDown) return;
+            const rect = container.getBoundingClientRect();
+            let x = e.pageX - rect.left;
+            x = Math.max(0, Math.min(x, rect.width));
+            afterWrapper.style.width = x + 'px';
+            slider.style.left = x + 'px';
+        }
+
+        container.addEventListener('mousedown', () => isDown = true);
+        window.addEventListener('mouseup', () => isDown = false);
+        window.addEventListener('mousemove', move);
+    }
+
+    window.addEventListener('load', () => {
+        initComparison('compare1');
+        initComparison('compare2'); // if you enable the second one
     });
 </script>
 
